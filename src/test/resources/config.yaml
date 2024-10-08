@@ -1,0 +1,11 @@
+- API_Set: "Set 1"
+  herokuURL: "https://restful-booker.herokuapp.com/"
+  googleURL: "https://www.google.com"
+
+- eCommerce: "rahul shetty"
+  name: "Rahul Shetty"
+  cvv: "116"
+  product: "IPHONE 13 PRO"
+  username: "arvindchavan7@gmail.com"
+  password: "Indore@123"
+  credit_card: "4542 9931 9292 2222"
