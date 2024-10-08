@@ -1,6 +1,6 @@
 - API_Set: "Set 1"
   herokuURL: "https://restful-booker.herokuapp.com/"
-  googleURL: "https://www.google.com"
+  reqresURL: "https://reqres.in/api/"
 
 - eCommerce: "rahul shetty"
   name: "Rahul Shetty"

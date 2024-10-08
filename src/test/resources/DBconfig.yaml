@@ -1,0 +1,5 @@
+- DB_Name : "clasicmodels"
+  url : "jdbc:mysql://localhost:3306/"
+  user_name : "root"
+  password : "amc_6683"
+  port : "3306"

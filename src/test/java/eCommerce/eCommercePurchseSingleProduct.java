@@ -10,14 +10,14 @@ import org.testng.annotations.Test;
 import org.utilities.YamlReader;
 
 public class eCommercePurchseSingleProduct extends baseClass {
-
+    String yamlFilePath="src/test/resources/config.yaml";
     @Test
     public void getSingleProduct() {
         eCommerceLandingPage.goTO();
         productsPage productsPage = eCommerceLandingPage.
-                validateErrorMessage(YamlReader.readYamlData("username"),
-                        YamlReader.readYamlData("password"));
-        productsPage.get_Single_Product(YamlReader.readYamlData("product"));
+                validateErrorMessage(YamlReader.readYamlData(yamlFilePath,"username"),
+                        YamlReader.readYamlData(yamlFilePath,"password"));
+        productsPage.get_Single_Product(YamlReader.readYamlData(yamlFilePath,"product"));
         productsPage.getProductDetails();
         cartPage cartPage = productsPage.clickOnCartPage();
         purchasePage purchasePage=cartPage.getCartData();

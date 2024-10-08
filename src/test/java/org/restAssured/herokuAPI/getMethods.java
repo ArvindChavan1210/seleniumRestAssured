@@ -11,9 +11,9 @@ import java.util.List;
 import static io.restassured.RestAssured.*;
 
 public class getMethods {
-
+    String yamlFilePath="src/test/resources/config.yaml";
     Response response;
-    String URL=YamlReader.readYamlData("herokuURL");
+    String URL=YamlReader.readYamlData(yamlFilePath,"herokuURL");
     static List<Object> ids;
 
     @Test

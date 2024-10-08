@@ -13,6 +13,7 @@ public class purchasePage extends AbstractClass {
 
     WebDriver driver;
     public orderConfirmationPage orderConfirmationPage;
+    String yamlFilePath="src/test/resources/config.yaml";
 
     public purchasePage(WebDriver driver) {
         super(driver);
@@ -46,11 +47,11 @@ public class purchasePage extends AbstractClass {
     public void paymentDetails(){
         wait_until_Element_Clickable(placeOrderButton);
         creditCardField.clear();
-        creditCardField.sendKeys(YamlReader.readYamlData("credit_card"));
+        creditCardField.sendKeys(YamlReader.readYamlData(yamlFilePath,"credit_card"));
         Select_Action(month).selectByVisibleText("10");
         Select_Action(date).selectByIndex(6);
-        cvvField.sendKeys(YamlReader.readYamlData("cvv"));
-        nameField.sendKeys(YamlReader.readYamlData("name"));
+        cvvField.sendKeys(YamlReader.readYamlData(yamlFilePath,"cvv"));
+        nameField.sendKeys(YamlReader.readYamlData(yamlFilePath,"name"));
 
     }
 
