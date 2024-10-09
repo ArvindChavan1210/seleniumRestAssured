@@ -1,5 +1,6 @@
 package org.restAssured.herokuAPI;
 
+import commons.ListenerUtils;
 import io.restassured.RestAssured;
 import io.restassured.config.HttpClientConfig;
 import io.restassured.config.RestAssuredConfig;
@@ -8,21 +9,20 @@ import io.restassured.response.Response;
 import org.apache.http.params.CoreConnectionPNames;
 import org.json.JSONObject;
 import org.testng.Assert;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import org.utilities.apiBaseClass;
 import org.utilities.jsonReader;
 import org.utilities.jsonWriter;
 
-import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileReader;
-import java.net.HttpURLConnection;
 import java.util.Map;
 
-import static io.restassured.RestAssured.*;
+import static io.restassured.RestAssured.given;
 import static org.testng.Assert.assertEquals;
 
+@Listeners(ListenerUtils.class)
 public class PostMethods {
     String token=TokenApi.GetToken_fromAPI();
     Response response;

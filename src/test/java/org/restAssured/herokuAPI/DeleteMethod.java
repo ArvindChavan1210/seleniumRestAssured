@@ -1,5 +1,6 @@
 package org.restAssured.herokuAPI;
 
+import commons.ListenerUtils;
 import io.restassured.RestAssured;
 import io.restassured.config.HttpClientConfig;
 import io.restassured.config.RestAssuredConfig;
@@ -7,6 +8,7 @@ import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.apache.http.params.CoreConnectionPNames;
 import org.testng.Assert;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import org.utilities.apiBaseClass;
 
@@ -15,6 +17,7 @@ import java.net.URL;
 import static io.restassured.RestAssured.given;
 import static org.restAssured.herokuAPI.PostMethods.id;
 
+@Listeners(ListenerUtils.class)
 public class DeleteMethod {
 
     @Test(dependsOnMethods = {"org.restAssured.herokuAPI.PostMethods.createData","org.restAssured.herokuAPI.getMethods.getBookingIDs"})

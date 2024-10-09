@@ -1,9 +1,13 @@
 package TryTestingThis;
 
+import commons.ListenerUtils;
 import commons.baseClass;
 import org.testng.Assert;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
+
+@Listeners(ListenerUtils.class)
 public class TryTesting extends baseClass {
 
 

@@ -1,5 +1,6 @@
 package org.restAssured.reqRes;
 
+import commons.ListenerUtils;
 import io.restassured.RestAssured;
 import io.restassured.config.HttpClientConfig;
 import io.restassured.config.RestAssuredConfig;
@@ -7,6 +8,7 @@ import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.apache.http.params.CoreConnectionPNames;
 import org.testng.Assert;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import org.utilities.PropertiesReader;
 import org.utilities.YamlReader;
@@ -15,6 +17,7 @@ import java.util.Objects;
 
 import static io.restassured.RestAssured.given;
 
+@Listeners(ListenerUtils.class)
 public class deleteRequest {
     String URL = YamlReader.readYamlData("src/test/resources/config.yaml", "reqresURL");
     String filePath = "src/test/resources/config.properties";

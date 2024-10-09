@@ -1,14 +1,17 @@
 package eCommerce;
 
+import commons.ListenerUtils;
 import commons.baseClass;
 import eCommercePageFactory.cartPage;
 import eCommercePageFactory.orderConfirmationPage;
 import eCommercePageFactory.productsPage;
 import eCommercePageFactory.purchasePage;
 import org.testng.Assert;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import org.utilities.YamlReader;
 
+@Listeners(ListenerUtils.class)
 public class eCommercePurchseSingleProduct extends baseClass {
     String yamlFilePath="src/test/resources/config.yaml";
     @Test

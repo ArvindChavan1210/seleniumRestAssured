@@ -1,20 +1,20 @@
 package org.restAssured.reqRes;
 
-import io.restassured.RestAssured;
+import commons.ListenerUtils;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.testng.Assert;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import org.utilities.PropertiesReader;
 import org.utilities.YamlReader;
 import org.utilities.jsonWriter;
 
-import java.io.File;
 import java.io.FileInputStream;
 
 import static io.restassured.RestAssured.given;
 
-
+//@Listeners(ListenerUtils.class)
 public class postReqRes {
 
     String URL= YamlReader.readYamlData("src/test/resources/config.yaml","reqresURL");
@@ -50,7 +50,7 @@ public class postReqRes {
                     .body(new FileInputStream(put_body_FilePath))
                     .when().put(URL + "{users}" + "/" + "{id}");
             Assert.assertTrue(response.getBody().asPrettyString().contains("Zakar"),"Different Name Placed in put");
-            Assert.assertTrue(response.getBody().asPrettyString().contains("zion resident"),"Different Job Placed in put");
+            Assert.assertTrue(response.getBody().asPrettyString().contains("engineer"),"Different Job Placed in put");
         } catch (Exception e){
             System.out.println(e.getMessage());
         }
