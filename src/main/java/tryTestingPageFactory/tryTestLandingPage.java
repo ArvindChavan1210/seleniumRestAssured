@@ -1,7 +1,5 @@
 package tryTestingPageFactory;
 
-import freemarker.template.utility.DateUtil;
-import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -9,6 +7,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.utilities.AbstractClass;
 import org.utilities.YamlReader;
+import org.utilities.txtReader;
+
+import java.util.Set;
 
 public class tryTestLandingPage extends AbstractClass {
 
@@ -23,6 +24,8 @@ public class tryTestLandingPage extends AbstractClass {
     public boolean isCheckBoxSelected;
     int current_value;
     int upadated_value;
+    txtReader txtReader=new txtReader();
+    public sidEx sidEx;
 
     public tryTestLandingPage(WebDriver driver) {
         super(driver);
@@ -56,8 +59,12 @@ public class tryTestLandingPage extends AbstractClass {
     WebElement scrollBar;
     @FindBy(id="myfile")
     WebElement file;
-
-
+    @FindBy(id="quantity")
+    WebElement quantityByRange;
+    @FindBy(name="message")
+    WebElement messageBox;
+    @FindBy(xpath="//div[@class='FPdoLc lJ9FBc']//input[@name='btnK']")
+    WebElement locator;
 
     public void getData(){
         wait_until_Element_Clickable(submitButton);
@@ -100,6 +107,32 @@ public class tryTestLandingPage extends AbstractClass {
         wait_until_Element_Visible(file);
         file.sendKeys("C:\\Users\\ASUS\\OneDrive\\Desktop\\trial.json.csv");
         System.out.println("File Uploaded :" + file.getAttribute("value"));
+        System.out.println("Quantity from Range Before :" +
+                quantityByRange.getAttribute("value"));
+        int j = 0;
+        while (j < 4) {
+            specific_action().sendKeys(Keys.ARROW_UP).build().perform();
+            j++;
+        }
+        System.out.println("Quantity from Range After :" +
+                quantityByRange.getAttribute("value"));
+        System.out.println("Text in MessageBox before :" + messageBox.getText());
+        messageBox.clear();
+        messageBox.sendKeys(txtReader.readFile("src/test/resources/messageBoxText.txt"));
+        submitButton.click();
+        Set<String> windows = driver.getWindowHandles();
+        String parentWindow=windows.iterator().next();
+        for (String window : windows) {
+            if (driver.switchTo().window(window).getTitle().equalsIgnoreCase("Google")) {
+                driver.close();
+                driver.switchTo().window(parentWindow);
+                break;
+            }
+        }
+    }
+
+    public tryTestingPageFactory.sidEx callSidEx(){
+        return sidEx=new sidEx(driver);
     }
 
 

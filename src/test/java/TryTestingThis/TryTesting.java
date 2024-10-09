@@ -17,4 +17,10 @@ public class TryTesting extends baseClass {
         Assert.assertTrue(tryTestingLandingPage.isCheckBoxSelected,"CheckBox not Selected");
     }
 
+    @Test
+    public void form2(){
+        tryTestingLandingPage.goTO();
+        tryTestingLandingPage.callSidEx().getSideData();
+        Assert.assertEquals(tryTestingLandingPage.sidEx.message1,"You Pressed the OK Button!","Different Alert Message");
+    }
 }
