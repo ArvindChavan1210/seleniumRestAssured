@@ -1,12 +1,10 @@
 package tryTestingPageFactory;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.utilities.AbstractClass;
 import org.utilities.javaScriptUtils;
 
@@ -84,4 +82,9 @@ public class sidEx extends AbstractClass {
         System.out.println(msgField.getText());
         nextPage.click();
     }
+
+    public tablePage callTablePage(){
+        return new tablePage(driver);
+    }
 }
+

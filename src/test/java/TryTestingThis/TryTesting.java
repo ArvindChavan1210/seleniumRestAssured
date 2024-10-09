@@ -23,4 +23,11 @@ public class TryTesting extends baseClass {
         tryTestingLandingPage.callSidEx().getSideData();
         Assert.assertEquals(tryTestingLandingPage.sidEx.message1,"You Pressed the OK Button!","Different Alert Message");
     }
+
+    @Test
+    public void form3(){
+        tryTestingLandingPage.goTO();
+        tryTestingLandingPage.callSidEx().callTablePage().gettableData();
+
+    }
 }
