@@ -13,6 +13,7 @@ import org.openqa.selenium.edge.EdgeOptions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.utilities.PropertiesReader;
+import tryTestingPageFactory.tryTestLandingPage;
 
 import java.io.File;
 import java.time.Duration;
@@ -22,13 +23,14 @@ public class baseClass {
     public static WebDriver driver;
     public static eCommerceLandingPage eCommerceLandingPage;
     private String filePath = "src/test/resources/config.properties";
+    public static tryTestLandingPage tryTestingLandingPage;
 
     @BeforeMethod
     public void launchApplication() {
         driver = getDriver();
         eCommerceLandingPage=new eCommerceLandingPage(driver);
         eCommerceLandingPage.goTO();
-
+        tryTestingLandingPage=new tryTestLandingPage(driver);
     }
 
     public WebDriver getDriver() {
