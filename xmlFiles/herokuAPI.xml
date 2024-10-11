@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="HeroKuAPI" parallel="false" verbose="1">
+    <listeners>
+        <listener class-name="commons.ListenerUtils"/>
+    </listeners>
+    <test name="HeroKuAPI">
+        <classes>
+            <class name="org.restAssured.herokuAPI.getMethods"/>
+            <class name="org.restAssured.herokuAPI.PostMethods"/>
+            <class name="org.restAssured.herokuAPI.DeleteMethod"/>
+        </classes>
+    </test>
+</suite>

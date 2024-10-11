@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="TryTesting" parallel="false" verbose="1">
+    <listeners>
+        <listener class-name="commons.ListenerUtils"/>
+    </listeners>
+    <test name="TryTestingValidations">
+        <classes>
+            <class name="TryTestingThis.TryTesting"/>
+        </classes>
+    </test>
+</suite>

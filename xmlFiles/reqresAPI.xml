@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="ReqResAPI" parallel="false" verbose="1">
+    <listeners>
+        <listener class-name="commons.ListenerUtils"/>
+    </listeners>
+    <test name="ReqResAPI">
+        <classes>
+            <class name="org.restAssured.reqRes.getReqRes"/>
+            <class name="org.restAssured.reqRes.postReqRes"/>
+            <class name="org.restAssured.reqRes.deleteRequest"/>
+        </classes>
+    </test>
+</suite>

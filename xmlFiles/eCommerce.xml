@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="ECommerce" parallel="true" verbose="1">
+    <listeners>
+        <listener class-name="commons.ListenerUtils"/>
+    </listeners>
+    <test name="purchase Single Product">
+        <classes>
+            <class name="eCommerce.eCommercePurchseSingleProduct"/>
+        </classes>
+    </test>
+    <test name="error validation">
+        <classes>
+            <class name="eCommerce.eCommerceErrorValidation"/>
+        </classes>
+    </test>
+</suite>
