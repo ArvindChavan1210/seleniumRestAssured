@@ -9,7 +9,7 @@ Feature: Validate Login Feature
     Given user logged in with "<username>" and password "<password>"
     Examples:
       | username                | password   |
-      | arvindchavan7@gmail.com | Indore@123 |
-      | arvindchavan7@gmail.com | Indore@125 |
       | arvindchavan7@email.com | Indore@123 |
       | arvindchavan7@email.com | Indore@125 |
+      | test@123.com            | LKN        |
+      | arvindchavan7@gmail.com | Indore@123 |
